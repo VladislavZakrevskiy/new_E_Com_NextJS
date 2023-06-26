@@ -13,19 +13,19 @@
 ##### /admin/order
 ###### Now Nothing
 
-##### /product
+##### /admin/product
 ###### POST ( *create product* )
 ###### DELETE ( *delete product* )
 ###### PATCH ( *update product* )
 
-##### /tag
+##### /admin/tag
 ###### POST ( *create tag* )
 ###### DELETE ( *delete tag* )
 
-##### /user
+##### /admin/user
 ###### Now Nothing
 
-
+<br></br>
 ### /auth
 ##### /auth/login
 ###### POST ( *login to account* )
@@ -33,13 +33,13 @@
 ##### /auth/registration
 ###### POST ( *create account* )
 
-##### /refresh
+##### /auth/refresh
 ###### GET ( *get refresh and access tokens* )
 
 ##### /auth/logout
 ###### POST ( *leave from account* )
 
-
+<br></br>
 ### /feedback
 ###### GET ( *get feedbacks* )
 ###### POST ( *create feedback* )
@@ -50,11 +50,11 @@
 ###### POST ( *like/unlike feedback* )
 ###### PATCH ( *update feedback* )
 
-
+<br></br>
 ### /order
 ###### Now Nothing
 
-
+<br></br>
 ## Only for owner
 ### /owner
 ##### /owner/admin
@@ -62,18 +62,18 @@
 ###### POST ( *raise from client to admin* )
 ###### DELETE ( *omit from admin to client* )
 
-
+<br></br>
 ### /products
 ###### GET ( *get all products by params* )
 
 #### /products/:id
 ###### GET ( *get one product with all deps* )
 
-
+<br></br>
 ### /tag
 ###### GET ( *get all tags* )
 
-
+<br></br>
 ### /users
 ###### GET ( *get user by id* )
 ###### DELETE ( *delete user from db* )
