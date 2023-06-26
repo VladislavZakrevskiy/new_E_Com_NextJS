@@ -1,0 +1,77 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Order {
+  order_id String    @id @default(uuid()) @db.Uuid
+  products Product[]
+  User     User?     @relation(fields: [user_id], references: [user_id])
+  user_id  String?   @db.Uuid
+
+  @@map("order")
+}
+
+model Product {
+  product_id String     @id @default(uuid()) @db.Uuid
+  Order      Order?     @relation(fields: [order_id], references: [order_id])
+  order_id   String?    @db.Uuid
+  price      Int
+  name       String
+  desc       String
+  tags       Tag        @relation(fields: [tag_id], references: [tag_id])
+  rating     Int        @default(0)
+  feedbacks  Feedback[]
+  sells      Int        @default(0)
+  tag_id     String     @db.Uuid
+
+  @@map("product")
+}
+
+model Feedback {
+  feedback_id String   @id @default(uuid()) @db.Uuid
+  text        String
+  user        User     @relation(fields: [user_id], references: [user_id])
+  user_id     String   @db.Uuid
+  created_at  DateTime @default(now())
+  Product     Product  @relation(fields: [product_id], references: [product_id])
+  product_id  String   @db.Uuid
+  to_id       String?  @db.Uuid
+  likes       String[]
+
+  @@map("feedback")
+}
+
+model User {
+  user_id       String     @id @default(uuid()) @db.Uuid
+  password      String
+  email         String     @unique
+  orders        Order[]
+  token         Token?     @relation(fields: [refresh_token], references: [refresh_token])
+  refresh_token String?
+  Feedback      Feedback[]
+  role          String
+
+  @@map("user")
+}
+
+model Token {
+  refresh_token String @id
+  user_id       String @unique @db.Uuid
+  User          User[]
+}
+
+model Tag {
+  tag_id  String    @id @default(uuid()) @db.Uuid
+  tag     String
+  Product Product[]
+
+  @@map("tag")
+}
