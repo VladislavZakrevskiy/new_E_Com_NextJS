@@ -27,54 +27,54 @@
 
 
 ### /auth
-#### /auth/login
-##### POST ( *login to account* )
+##### /auth/login
+###### POST ( *login to account* )
 
-#### /auth/registration
-##### POST ( *create account* )
+##### /auth/registration
+###### POST ( *create account* )
 
-#### /refresh
-##### GET ( *get refresh and access tokens* )
+##### /refresh
+###### GET ( *get refresh and access tokens* )
 
-#### /auth/logout
-##### POST ( *leave from account* )
+##### /auth/logout
+###### POST ( *leave from account* )
 
 
 ### /feedback
-##### GET ( *get feedbacks* )
-##### POST ( *create feedback* )
-##### DELETE ( *delete feedback* )
+###### GET ( *get feedbacks* )
+###### POST ( *create feedback* )
+###### DELETE ( *delete feedback* )
 
-#### /feedback/:id
-##### GET ( *get one feedback* )
-##### POST ( *like/unlike feedback* )
-##### PATCH ( *update feedback* )
+##### /feedback/:id
+###### GET ( *get one feedback* )
+###### POST ( *like/unlike feedback* )
+###### PATCH ( *update feedback* )
 
 
 ### /order
-##### Now Nothing
+###### Now Nothing
 
 
 ## Only for owner
 ### /owner
-#### /owner/admin
-##### GET ( *get all admins* )
-##### POST ( *raise from client to admin* )
-##### DELETE ( *omit from admin to client* )
+##### /owner/admin
+###### GET ( *get all admins* )
+###### POST ( *raise from client to admin* )
+###### DELETE ( *omit from admin to client* )
 
 
 ### /products
-##### GET ( *get all products by params* )
+###### GET ( *get all products by params* )
 
 #### /products/:id
-##### GET ( *get one product with all deps* )
+###### GET ( *get one product with all deps* )
 
 
 ### /tag
-##### GET ( *get all tags* )
+###### GET ( *get all tags* )
 
 
 ### /users
-##### GET ( *get user by id* )
-##### DELETE ( *delete user from db* )
-##### PATCH ( *update user data* )
+###### GET ( *get user by id* )
+###### DELETE ( *delete user from db* )
+###### PATCH ( *update user data* )
