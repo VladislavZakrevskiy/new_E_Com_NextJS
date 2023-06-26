@@ -7,10 +7,10 @@
 
 ## Only for admin and higher 
 ### /admin
-##### /feedback
+##### /admin/feedback
 ###### DELETE  ( *delete feedback* )
 
-##### /order
+##### /admin/order
 ###### Now Nothing
 
 ##### /product
@@ -27,16 +27,16 @@
 
 
 ### /auth
-#### /login
+#### /auth/login
 ##### POST ( *login to account* )
 
-#### /registration
+#### /auth/registration
 ##### POST ( *create account* )
 
 #### /refresh
 ##### GET ( *get refresh and access tokens* )
 
-#### /logout
+#### /auth/logout
 ##### POST ( *leave from account* )
 
 
@@ -45,7 +45,7 @@
 ##### POST ( *create feedback* )
 ##### DELETE ( *delete feedback* )
 
-#### /:id
+#### /feedback/:id
 ##### GET ( *get one feedback* )
 ##### POST ( *like/unlike feedback* )
 ##### PATCH ( *update feedback* )
@@ -57,7 +57,7 @@
 
 ## Only for owner
 ### /owner
-#### /admin
+#### /owner/admin
 ##### GET ( *get all admins* )
 ##### POST ( *raise from client to admin* )
 ##### DELETE ( *omit from admin to client* )
@@ -66,7 +66,7 @@
 ### /products
 ##### GET ( *get all products by params* )
 
-#### /:id
+#### /products/:id
 ##### GET ( *get one product with all deps* )
 
 
